@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhishGuard AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">
+<img src="{{ url_for('static', filename='shield.png') }}">
+<h2>PhishGuard AI</h2>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="nav-btn">
+<button onclick="showDashboard()">Get Started</button>
+</div>
+</header>
+
+<section class="hero" id="home">
+<p class="tag">AI-Powered Phishing Detection</p>
+
+<h1>
+Stop Phishing Attacks <br>
+<span>Before They Strike</span>
+</h1>
+
+<p class="subtext">
+PhishGuard AI detects phishing attempts in messages, emails, and URLs using intelligent pattern analysis.
+</p>
+
+<button onclick="showDashboard()" class="primary-btn">
+Get Started
+</button>
+</section>
+
+<section class="dashboard hidden" id="dashboard">
+
+<h2 class="demo-title">
+Try It <span>Right Now</span>
+</h2>
+
+<p class="demo-text">
+Paste any URL, email, or message below to detect phishing instantly
+</p>
+
+<div class="analyzer-box">
+
+<div class="input-row">
+<input type="text" id="url" placeholder="Paste URL, email, or message to analyze...">
+<button onclick="analyze(event)">Analyze</button>
+</div>
+
+<div class="examples">
+
+<p>Try:</p>
+
+<div class="try-grid">
+
+<div class="try-col">
+<h4>URL</h4>
+<span onclick="setInput('https://google.com')">google.com</span>
+<span onclick="setInput('http://account-check.com')">account-check.com</span>
+<span onclick="setInput('http://secure-login-paypal.xyz/verify')">secure-login-paypal.xyz</span>
+</div>
+
+<div class="try-col">
+<h4>Email</h4>
+<span onclick="setInput('hello@gmail.com')">hello@gmail.com</span>
+<span onclick="setInput('update@profile.com')">update@profile.com</span>
+<span onclick="setInput('otp@secure.com')">otp@secure.com</span>
+</div>
+
+<div class="try-col">
+<h4>Message</h4>
+<span onclick="setInput('good morning')">good morning</span>
+<span onclick="setInput('please check your account')">please check your account</span>
+<span onclick="setInput('enter otp immediately')">enter otp immediately</span>
+</div>
+
+</div>
+</div>
+
+<div id="result" class="result-box safe">
+<h3 id="result-title">Safe</h3>
+<p id="result-text">No phishing indicators detected</p>
+<span id="result-type">Type: Waiting for input</span>
+</div>
+
+</div>
+</section>
+
+<section class="features" id="features">
+<h2>Everything You Need to Detect Phishing</h2>
+<p class="feature-sub">
+Smart detection features for modern phishing protection
+</p>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+<h3>Real-Time Detection</h3>
+<p>Instantly detects phishing attempts</p>
+<p>Fast response with minimal delay</p>
+<p>Accurate real-time classification</p>
+</div>
+
+<div class="feature-box">
+<h3>Email & URL Analysis</h3>
+<p>Scans suspicious emails and links</p>
+<p>Detects hidden phishing patterns</p>
+<p>Identifies malicious structures</p>
+</div>
+
+<div class="feature-box">
+<h3>Risk Classification</h3>
+<p>Safe, Medium, High categorization</p>
+<p>Confidence-based scoring</p>
+<p>Clear understandable results</p>
+</div>
+
+<div class="feature-box">
+<h3>AI-Based Detection</h3>
+<p>Uses intelligent pattern recognition</p>
+<p>Simulates AI decision making</p>
+<p>Improves detection accuracy</p>
+</div>
+
+<div class="feature-box">
+<h3>Pattern Matching</h3>
+<p>Matches known phishing behaviors</p>
+<p>Detects suspicious keywords</p>
+<p>Identifies risky structures</p>
+</div>
+
+<div class="feature-box">
+<h3>Smart Decision Engine</h3>
+<p>Combines multiple detection factors</p>
+<p>Analyzes context intelligently</p>
+<p>Produces reliable predictions</p>
+</div>
+
+</div>
+</section>
+
+<section class="about-section" id="about">
+<div class="about-card">
+<h2>About PhishGuard AI</h2>
+<p>
+AI-powered phishing detection platform that analyzes real-time data patterns
+to identify suspicious activities and protect users from cyber threats.
+</p>
+
+<div class="about-info">
+<div class="about-row">
+<span>Inputs</span>
+<p>URLs / Emails / Messages</p>
+</div>
+
+<div class="about-row">
+<span>Output</span>
+<p>Safe / Suspicious / Phishing</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer class="footer-main" id="contact">
+
+<div class="footer-simple">
+<h2>PhishGuard <span>AI</span></h2>
+<p>
+AI-powered phishing detection platform that analyzes URLs, emails, and messages in real-time.
+</p>
+
+<div class="footer-contact-box">
+<p>Contact</p>
+<a href="mailto:phishguardai@gmail.com">phishguardai@gmail.com</a>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 PhishGuard AI. All rights reserved.</p>
+</div>
+
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
